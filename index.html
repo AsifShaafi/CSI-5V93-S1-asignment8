@@ -38,14 +38,76 @@
 			</div>
 		</div>
 		<div id="comments">
-			<h2>About this app</h2>
-			<p>Include information here about your app.</p>
-			<ul>
-				<li>Instructions for using the app</li>
-				<li>Test results</li>
-				<li>Anything else you have tried out</li>
-			</ul>
-		</div>
+      <h2>About this app</h2>
+      <p>Include information here about your app.</p>
+      <h3>Instructions for using the app</h3>
+      <h4>Two key switch</h4>
+      <p>
+        The two keys used for this use are: <b>a</b> and <b>s</b>. So the user
+        can press the 'a' key to select the next key/button in the calculator,
+        and when they want to select/click the key, the need to use the 's'
+        bar/key. Using 'a' key will start from the top left button, that is 7,
+        and continue going right until it reach the bottom right button,
+        minus(-), and will go back to the top left one again, completing the
+        loop. At any point of the focusing of the buttons, the user can press
+        's' to select/click the focused button(identified by the yellow color).
+      </p>
+
+      <h4>One key switch</h4>
+      <p>
+        The one key used for this one is: <b><i>z</i></b
+        >.<br />
+        So to use this key, user needs to press the 'z' key once, and the focus
+        loop will start from the top left corner, which is 7. Then will will
+        continue to go to the next button after each 1000 ms. To stop the loop
+        and select/click a button, the user has to press 'z' again, that will
+        first stop the loop, then within 1000 ms, the user has to press 'z'
+        again to actually get the value. After 1000 ms, pressing the 'z' key
+        will start the loop from where it stopped.
+        <i
+          >It is mandatory to press the 'z' key within 1000 ms after stopping
+          the loop to be able to click the button. </i
+        >So the overall process is like this: <br />
+      </p>
+      <ol>
+        <li>
+          Press 'z' to start the focus selection loop. It will continue to focus
+          on each key with 1000 ms interval
+        </li>
+        <li>Press 'z' again to stop the focus loop</li>
+        <li>
+          If the desired button is in focus, press 'z' again within 1000ms to
+          "Click" the button
+        </li>
+        <li>
+          If this is not the intended button, wait 1000ms, then press 'z' again
+          to start the focus loop from that button.
+        </li>
+        <li>Repeat step 2 to use the calculator</li>
+        <li>
+          To exit the loop/one switch mode, press 'x', or stop after step 2
+        </li>
+      </ol>
+
+      <h3>Test results</h3>
+      <p>
+        I tested several equations and calculations using both two key and one
+        key switch. In all cases, two key was faster, as I was able to click the
+        buttons faster. But the one key switch was more convenient, as I did not
+        have to move my hand on the keyboard. However, the one key switch was
+        not as fast as the two key switch. I tried to reduce the interval, but
+        in that case it was hard to click the button, as the focus was changing
+        too fast. So I kept the interval at 1000ms.
+      </p>
+
+      <h3>Anything else you have tried out</h3>
+      <p>
+        I tried to implement the one switch in a way that after pressing 'z' to
+        stop the loop, if the user didn't press 'z' again to click the button,
+        the loop would auto start again after 1000ms. But I was not able to do
+        that.
+      </p>
+    </div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
 		<script src="calculator.js" type="text/javascript"></script>
 	</body>
